@@ -11,9 +11,6 @@ Pipolins constitute a new group of self-synthesizing or self-replicating mobile 
 >and variability of pipolins among a wide range of pathogenic *Escherichia 
 >coli* strains. *bioRxiv*, 2020](https://www.biorxiv.org/content/10.1101/2020.04.24.059261v1)
 
- **ExplorePipolin** is a search tool that identifies and analyses
- pipolins within bacterial genome.
-
 # Table of contents
 
 * [Requirements](#requirements)
