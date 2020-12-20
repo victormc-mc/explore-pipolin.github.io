@@ -1,8 +1,6 @@
-## Welcome to GitHub Pages
+## Welcome to ExplorePipolin
 
-You can use the [editor on GitHub](https://github.com/victormc-mc/explore-pipolin.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Pipolins constitute a new group of self-synthesizing or self-replicating mobile genetic elements (MGEs). They are widespread among diverse bacterial phyla and mitochondria.
 
 ### Markdown
 
