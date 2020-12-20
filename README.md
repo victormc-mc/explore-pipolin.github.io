@@ -54,24 +54,24 @@ NOTE: before installing, it is possible to run unit tests:
  
  `conda install wget`
  
- 1. Create a new environment that is specific for ExplorePipolin. You can 
+ 2. Create a new environment that is specific for ExplorePipolin. You can 
  choose whatever name you'd like for the environment.
  
  `wget https://github.com/liubovch/ExplorePipolin/releases/download/0.0.a1/explore-pipolin-0.0.a1-py_0.yml`
  
  `conda env create -n ExplorePipolin-0.0.a1 --file explore-pipolin-0.0.a1-py_0.yml`
  
- 1. Download and install ExplorePipolin into the created environment:
+ 3. Download and install ExplorePipolin into the created environment:
  
  `wget https://github.com/liubovch/ExplorePipolin/releases/download/0.0.a1/explore-pipolin-0.0.a1-py_0.tar.bz2`
  
  `conda install -n ExplorePipolin-0.0.a1 explore-pipolin-0.0.a1-py_0.tar.bz2`
  
- 1. Clean up (optional):
+ 4. Clean up (optional):
  
  `rm explore-pipolin-0.0.a1-py_0.yml explore-pipolin-0.0.a1-py_0.tar.bz2`
  
- 1. Activate the environment and check the installation:
+ 5. Activate the environment and check the installation:
  
  `conda activate ExplorePipolin-0.0.a1`
  
