@@ -1,37 +1,130 @@
-## Welcome to GitHub Pages
+## Welcome to ExplorePipolin
 
-You can use the [editor on GitHub](https://github.com/victormc-mc/explore-pipolin.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+Pipolins constitute a new group of self-synthesizing or self-replicating mobile genetic elements (MGEs). They are widespread among diverse bacterial phyla and mitochondria.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+> [**Redrejo-Rodríguez, M., *et al.*** Primer-independent DNA synthesis 
+>by a family B DNA polymerase from self-replicating Mobile genetic elements. 
+>*Cell reports*, 2017](https://doi.org/10.1016/j.celrep.2017.10.039)
+>
+>[**Flament-Simon, S.C., de Toro, M., Chuprikova, L., *et al.*** High diversity 
+>and variability of pipolins among a wide range of pathogenic *Escherichia 
+>coli* strains. *bioRxiv*, 2020](https://www.biorxiv.org/content/10.1101/2020.04.24.059261v1)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+ **ExplorePipolin** is a search tool that identifies and analyses
+ pipolins within bacterial genome.
 
-```markdown
-Syntax highlighted code block
+# Table of contents
 
-# Header 1
-## Header 2
-### Header 3
+* [Requirements](#requirements)
+* [Installation](#installation)
+    * [Install from source](#install-from-source)
+    * [Install using Conda](#install-using-conda)
+* [Quick usage](#quick-usage)
+    * [Test run](#test-run)
+    * [Output files](#output-files)
+* [Running with Docker](#running-with-docker)
 
-- Bulleted
-- List
+# Requirements
 
-1. Numbered
-2. List
+ * pip
+ * [BLAST+](https://www.ncbi.nlm.nih.gov/books/NBK279690/)
+ * [ARAGORN](https://github.com/TheSEED/aragorn)
+ * [Prokka](https://github.com/tseemann/prokka)
 
-**Bold** and _Italic_ and `Code` text
+# Installation
+### Install from source
 
-[Link](url) and ![Image](src)
+ 1. Install the requirements (see above).
+ 1. `wget https://github.com/liubovch/ExplorePipolin/archive/0.0.a1.zip`
+ 1. `unzip 0.0.a1.zip && cd ExplorePipolin-0.0.a1` 
+ 1. `pip install .` (install in user site-package) or
+ `sudo pip install .` (requires superuser privileges)
+ 
+NOTE: before installing, it is possible to run unit tests:
+`pytest` or `python setup.py test` (from the source root directory).
+ 
+**How to uninstall:**
+
+`(sudo) pip uninstall ExplorePipolin`
+
+### Install using Conda
+ 
+ * Before installing ExplorePipolin, make sure you'are running the latest 
+ version of Conda:
+ 
+ `conda update conda`
+ 
+ `conda install wget`
+ 
+ * Create a new environment that is specific for ExplorePipolin. You can 
+ choose whatever name you'd like for the environment.
+ 
+ `wget https://github.com/liubovch/ExplorePipolin/releases/download/0.0.a1/explore-pipolin-0.0.a1-py_0.yml`
+ 
+ `conda env create -n ExplorePipolin-0.0.a1 --file explore-pipolin-0.0.a1-py_0.yml`
+ 
+ * Download and install ExplorePipolin into the created environment:
+ 
+ `wget https://github.com/liubovch/ExplorePipolin/releases/download/0.0.a1/explore-pipolin-0.0.a1-py_0.tar.bz2`
+ 
+ `conda install -n ExplorePipolin-0.0.a1 explore-pipolin-0.0.a1-py_0.tar.bz2`
+ 
+  * Clean up (optional):
+ 
+ `rm explore-pipolin-0.0.a1-py_0.yml explore-pipolin-0.0.a1-py_0.tar.bz2`
+ 
+ * Activate the environment and check the installation:
+ 
+ `conda activate ExplorePipolin-0.0.a1`
+ 
+ `explore_pipolin -h`
+
+# Quick usage
+
+### Test run
+As input, **ExplorePipolin** takes FASTA file(s) with genome sequence(s). 
+A genome sequence can be either a single complete chromosome (preferred) 
+or contigs (in a single multiFASTA file).
+
+```bash
+--> explore_pipolin -h
+Usage: explore_pipolin [OPTIONS] GENOMES...
+
+  ExplorePipolin is a search tool that identifies and analyses
+  pipolin elements  within bacterial genome(s).
+
+Options:
+  --out-dir PATH  [required]
+  -h, --help      Show this message and exit.
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Output files
 
-### Jekyll Themes
+The output directory will contain several folders:
+ 
+ | Folder | Content description |
+ |--------|---------------------|
+ | `pipolbs_search` | BLAST search results for piPolB genes |
+ | `atts_search` | BLAST search results for the known *att* sites |
+ | `atts_denovo_search` | Results of *de novo* search for *att* sites |
+ | `trnas_search` | ARAGORN search results for tRNAs/tmRNAs |
+ | `pipolin_sequences` | extracted pipolin sequences in FASTA format |
+ | `prokka_results` | Prokka annotation results (check files description [here](https://github.com/tseemann/prokka/blob/master/README.md#output-files))|
+ | `results` | GenBank and GFF annotation results with the *att*s included, log files |
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/victormc-mc/explore-pipolin.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
+# Running with Docker
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+See https://docs.docker.com/install/ to install Docker.
+
+**NOTE:** superuser privileges are required to run the analysis and around 3GB of disk space for the image.
+
+```
+sudo docker pull docker.pkg.github.com/liubovch/explorepipolin/explore_pipolin:0.0.a1
+sudo docker tag docker.pkg.github.com/liubovch/explorepipolin/explore_pipolin:0.0.a1 explore_pipolin
+sudo docker run --rm explore_pipolin -h
+sudo docker run --rm -v $(pwd):/output -w /output explore_pipolin 
+ --out-dir output ./input_genomes/*.fa   #(example run)
+```
+
