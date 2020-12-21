@@ -73,7 +73,7 @@
     
     <article class="my-3" id="welcome">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
-        <h3>Welcome to ExplorePipolin</h3>
+        <h3>Welcome</h3>
       </div>
       
       <div>
@@ -174,71 +174,63 @@
         </div>
        </div>
     </article>
-
-    <article class="my-3" id="typography">
+   </section>
+  <section id="quick-usage">
+    <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3">Quick Usage</h2>
+    
+    <article class="my-3" id="test-run">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
-        <h3>Typography</h3>
-        <a class="d-flex align-items-center" href="../content/typography/">Documentation</a>
+        <h3>Test run</h3>
       </div>
+      
+      <div class="bd-example">
+      <p>As input, ExplorePipolin takes FASTA file(s) with genome sequence(s). A genome sequence can be either a single complete chromosome (preferred) or contigs (in a single multiFASTA file).</p>
+      <pre><code>
+      --> explore_pipolin -h
+      Usage: explore_pipolin [OPTIONS] GENOMES...
 
-      <div>
-        <div class="bd-example">
-        <p class="display-1">Display 1</p>
-        <p class="display-2">Display 2</p>
-        <p class="display-3 ">Display 3</p>
-        </div>
-        
-        <div class="bd-example">
-        <p class="h1">Heading 1</p>
-        <p class="h2">Heading 2</p>
-        <p class="h3">Heading 3</p>
-        <p class="h4">Heading 4</p>
-        <p class="h5">Heading 5</p>
-        <p class="h6">Heading 6</p>
-        </div>
+      ExplorePipolin is a search tool that identifies and analyses
+      pipolin elements  within bacterial genome(s).
+
+      Options:
+      --out-dir PATH  [required]
+      -h, --help      Show this message and exit.
+      </pre><code>
       </div>
     </article>
-    
-    <article class="my-3" id="tables">
+        
+    <article class="my-3" id="output-files">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
-        <h3>Tables</h3>
-        <a class="d-flex align-items-center" href="../content/tables/">Documentation</a>
+        <h3>Output files</h3>
       </div>
-
-      <div>
-        <div class="bd-example">
-        <table class="table table-striped">
+      
+      <div class="db-example">
+      <p>The output directory will contain several folders:<p>
+      <table class="table table-striped">
           <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Folder</th>
+            <th scope="col">Content description</th>
           </tr>
           </thead>
           <tbody>
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <th scope="row"><code>pipolbs_search</code></th>
+            <td>BLAST search results for piPolB genes</td>
           </tr>
           <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
+            <th scope="row"><code>atts_search</code></th>
+            <td>BLAST search results for the known att sites</td>
           </tr>
           <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
+            <th scope="row"><code class="text-secondary">To be continued</class></th>
+            <td>(empty)</td>
           </tr>
           </tbody>
         </table>
         </div>
-      </div>
-    </article>
+     
+      
   </section>
 </div>    
 
