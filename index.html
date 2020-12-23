@@ -172,9 +172,54 @@
             <li> Requires superuser privileges: <code>sudo pip install</code></li>
           </ul></li>
          </ol>
+          <p>NOTE: before installing, it is possible to run unit tests:</p>
+        <ul>
+            <li><code>pytest</code></li>
+            <li><code>python setup.py test</code>(from the source root directory)</li>
+        </ul>
+        <p>How to uninstall:
+          <code>pip uninstall ExplorePipolin</code></p>
         </div>
        </div>
     </article>
+      
+    <article class="my-3" id="installation-conda">
+      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
+        <h3>Installation unsing Conda</h3>
+      </div>
+      
+      <div>
+        <div class="bd-example">
+        <p>Before installing ExplorePipolin, make sure you are running the latest version of Conda</p>
+        <ul>
+            <li><code>conda update conda</code></li>
+            <li><code>conda install wget</code></li>
+        </ul>
+      </div>
+       
+      <div>
+        <div class="bd-example">
+        <ol>
+          <li>Create a new environment thar is specific for ExplorePipolin. You can choose whatever name you'd like for the environment.
+            <ul>
+              <li><code>wget https://github.com/liubovch/ExplorePipolin/releases/download/0.0.a1/explore-pipolin-0.0.a1-py_0.yml</code></li>
+              <li><code>conda env create -n ExplorePipolin-0.0.a1 --file explore-pipolin-0.0.a1-py_0.yml</code></li>
+            </ul></li>
+         <li>Download and install ExplorePipolin into the created environment:
+            <ul>
+              <li><code>wget https://github.com/liubovch/ExplorePipolin/releases/download/0.0.a1/explore-pipolin-0.0.a1-py_0.tar.bz2</code></li>
+              <li><code>conda install -n ExplorePipolin-0.0.a1 explore-pipolin-0.0.a1-py_0.tar.bz2</code></li>
+            </ul></li>
+         <li>Clean up (optional):
+           <ul><li><code>rm explore-pipolin-0.0.a1-py_0.yml explore-pipolin-0.0.a1-py_0.tar.bz2</code></li></ul></li>
+         <li>Activate the environment and check the installation:
+           <ul>
+             <li><code>conda activate ExplorePipolin-0.0.a1</code></li>
+             <li><code>explore_pipolin -h</code></li>
+           </ul></li>
+          </div>
+        </div>
+    
    </section>
   <section id="quick-usage">
     <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3">Quick Usage</h2>
