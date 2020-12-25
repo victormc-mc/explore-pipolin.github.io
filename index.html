@@ -37,11 +37,15 @@
   <body class="bg-light">
     
 <header class="bd-header bg-dark py-3 d-flex align-items-stretch border-bottom border-dark">
-  <div class="container-fluid d-flex align-items-center">
+  <div class="container-fluid d-flex align-items-center justify-content-between">
     <h1 class="d-flex align-items-center fs-4 text-white mb-0">
       <!--img src="./assets/brand/bootstrap-logo-white.svg" width="38" height="30" class="me-3" alt="Bootstrap"-->
       ExplorePipolin
     </h1>
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-secondary" type="submit">Search</button>
+    </form>
   </div>
 </header>
 <aside class="bd-aside sticky-xl-top text-muted align-self-start mb-3 mb-xl-5 px-2">
@@ -69,7 +73,7 @@
 </aside>
 <div class="bd-cheatsheet container-fluid bg-white">
   <section id="Introduction">
-    <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3">Introduction</h2>
+    <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3"></h2>
     
     <article class="my-3" id="welcome">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
@@ -78,16 +82,40 @@
       
       <div>
         <div class="containter p-5 p-md-5 mb-4 text-white rounded shadow bg-dark" >
-        <p class="display-1 text-center" style="color:#D3D5F9 "><strong>ExplorePipolin</strong></p>
-        <p>Search tool for identifying Pipolins</p>
+        <p class="display-1 pb-4 text-center" style="color:#D3D5F9 "><strong>ExplorePipolin</strong></p>
+        <p class="text-center pt-1">Search tool for identifying Pipolins</p>
         </div> 
-        
-        <div class="bd-example">
-        <p class="lead">
-          ExplorePipolin is a search tool that identifies and analyses pipolins within bacterial genome.
-        </p>
+
+        <div class="row">
+          <div class="col-sm-6 p-3">
+            <div class="container bg-light p-3">
+              <p>Download ExplorePipolin</p>
+              <div class="btn-group" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Download
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                  <li><a class="dropdown-item" href="#">.zip file</a></li>
+                  <li><a class="dropdown-item" href="#">.tar.gz file</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 p-3">
+            <div class="container bg-light p-3">
+              <p>View project on GitHub</p>
+              <a href="#" class="btn btn-dark">GitHub</a>
+            </div>
+          </div>
         </div>
-        
+      
+                
+        <div class="bd-example">
+          <p class="lead">
+            ExplorePipolin is a search tool that identifies and analyses pipolins within bacterial genome.
+          </p>
+        </div>
+
         <div class="bd-example">
         <div class="accordion" id="accordionExample">
           <div class="accordion-item">
@@ -111,13 +139,13 @@
           </div>
           <div class="card-body">
             <ul>
-              <li><blockquote class="blockquote mb-0">
-              <p>Primer-independent DNA synthesis by a family B DNA polymerase from self-replicating Mobile genetic elements.
+              <li><blockquote class="blockquote">
+              <p class="small">Primer-independent DNA synthesis by a family B DNA polymerase from self-replicating Mobile genetic elements.
               </p>
               <footer class="blockquote-footer">Redrejo-Rodríguez, M., et al. in <cite title="Source Title"><a href="https://www.cell.com/cell-reports/fulltext/S2211-1247(17)31486-9">Cell reports, 2017.</a></cite></footer>
             </blockquote></li>
-            <li><blockquote class="blockquote mb-0">
-              <p>High diversity and variability of pipolins among a wide range of pathogenic Escherichia coli strains.</p>
+            <li><blockquote class="blockquote">
+              <p class="small">High diversity and variability of pipolins among a wide range of pathogenic Escherichia coli strains.</p>
               <footer class="blockquote-footer">Flament-Simon, S.C., de Toro, M., Chuprikova, L., et al. in <cite title="Source Title"><a href="https://www.nature.com/articles/s41598-020-69356-6">Scientific Reports, 2020.</a></cite></footer>
             </blockquote></li>
             </ul>
@@ -138,7 +166,7 @@
       <div>
         <div class="bd-example">
         <ul class="list-group">
-          <li class="list-group-item list-group-item-primary" aria-current="true"><strong>Requiered programs</strong></li>
+          <li class="list-group-item list-group-item-primary" aria-current="true"><strong>List of requiered programs</strong></li>
           <li class="list-group-item">pip</li>
           <li class="list-group-item">BLAST</li>
           <li class="list-group-item">ARAGORN</li>
@@ -305,52 +333,63 @@
       <div class="bd-example">
       <p>See <a href="https://docs.docker.com/install/">https://docs.docker.com/install/</a>to install Docker.</p>
       <p>NOTE: superuser privileges are required to run the analysis and around 3GB of disk space for the image.</p>
-      <div class="bd-example"><pre><code>
+      <div class="bd-example bg-light"><pre><code>
       sudo docker pull docker.pkg.github.com/liubovch/explorepipolin/explore_pipolin:0.0.a1
-      sudo docker tag docker.pkg.github.com/liubovch/explorepipolin/explore_pipolin:0.0.a1 explore_pipolin
+      sudo docker tag docker.pkg.github.com/liubovch/explorepipolin/explore_pipolin:0.0.a1 explore_pipolin 
       sudo docker run --rm explore_pipolin -h
       sudo docker run --rm -v $(pwd):/output -w /output explore_pipolin 
       --out-dir output ./input_genomes/*.fa   #(example run)
       </code></pre></div>
       </div>
     </article>
-      </section>      
+      </section>
+
+      <section id="footer">
+        <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3"></h2>
+        
+        <article class="my-3 bg-light" id="footer-a">
+        <p></p>
+
+        <footer class="container py-5 bg-light">
+          <div class="col-12 col-md">
+            <!--logo-->
+            <small class="d-block mb-3 text-muted">Usefull links</small>
+          </div>
+        <div class="row">
+          <div class="col-6 col-md">
+            <h5>Lista de cosas</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="link-secondary" href="#">Cool stuff</a></li>
+              <li><a class="link-secondary" href="#">Random feature</a></li>
+              <li><a class="link-secondary" href="#">Team feature</a></li>
+              <li><a class="link-secondary" href="#">Stuff for developers</a></li>
+              <li><a class="link-secondary" href="#">Another one</a></li>
+              <li><a class="link-secondary" href="#">Last time</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Lista 2</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="link-secondary" href="#">Resource name</a></li>
+              <li><a class="link-secondary" href="#">Resource</a></li>
+              <li><a class="link-secondary" href="#">Another resource</a></li>
+              <li><a class="link-secondary" href="#">Final resource</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Información adicional</h5>
+            <p class="d-block mb-3 text-muted">Cosas finales</p>
+          </div>
+        </div>
+        </footer>
+        </article>
+          </section>   
 </div>    
-<footer class="container py-5">
-    <div class="col-12 col-md">
-      <!--logo-->
-      <small class="d-block mb-3 text-muted">Usefull links</small>
-    </div>
-  <div class="row">
-    <div class="col-6 col-md">
-      <h5>Lista de cosas</h5>
-      <ul class="list-unstyled text-small">
-        <li><a class="link-secondary" href="#">Cool stuff</a></li>
-        <li><a class="link-secondary" href="#">Random feature</a></li>
-        <li><a class="link-secondary" href="#">Team feature</a></li>
-        <li><a class="link-secondary" href="#">Stuff for developers</a></li>
-        <li><a class="link-secondary" href="#">Another one</a></li>
-        <li><a class="link-secondary" href="#">Last time</a></li>
-      </ul>
-    </div>
-    <div class="col-6 col-md">
-      <h5>Lista 2</h5>
-      <ul class="list-unstyled text-small">
-        <li><a class="link-secondary" href="#">Resource name</a></li>
-        <li><a class="link-secondary" href="#">Resource</a></li>
-        <li><a class="link-secondary" href="#">Another resource</a></li>
-        <li><a class="link-secondary" href="#">Final resource</a></li>
-      </ul>
-    </div>
-    <div class="col-6 col-md">
-      <h5>Información adicional</h5>
-      <p class="d-block mb-3 text-muted">Cosas finales</p>
-    </div>
-  </div>
-</footer>
+
       <script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
     
       <script src="cheatsheet.js"></script>
   
   </body>
 </html>
+
