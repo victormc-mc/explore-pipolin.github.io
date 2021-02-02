@@ -38,10 +38,10 @@
     
 <header class="bd-header bg-dark py-3 d-flex align-items-stretch border-bottom border-dark">
   <div class="container-fluid d-flex align-items-center justify-content-between">
-    <h1 class="d-flex align-items-center fs-4 text-white mb-0">
-      <!--img src="./assets/brand/bootstrap-logo-white.svg" width="38" height="30" class="me-3" alt="Bootstrap"-->
-      ExplorePipolin
-    </h1>
+    <p class="d-flex align-items-center fs-4 mb-0" style="color:#a7c9fc">
+      <!--img src="./logo.svg" width="38" height="30" class="me-3" alt="Bootstrap"-->
+      <strong>ExplorePipolin</strong>
+    </p>
     <form class="d-flex">
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-secondary" type="submit">Search</button>
@@ -73,7 +73,7 @@
 </aside>
 <div class="bd-cheatsheet container-fluid bg-white">
   <section id="Introduction">
-    <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3"></h2>
+    <h5 class="sticky-xl-top fw-bold"></h5>
     
     <article class="my-3" id="welcome">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
@@ -81,15 +81,19 @@
       </div>
       
       <div>
-        <div class="containter p-5 p-md-5 mb-4 text-white rounded shadow bg-dark" >
-        <p class="display-1 pb-4 text-center" style="color:#D3D5F9 "><strong>ExplorePipolin</strong></p>
-        <p class="text-center pt-1">Search tool for identifying Pipolins</p>
-        </div> 
+        <div class="bd-example border border-3">
+          <img src="assets/banner.png" class="img-fluid"></img>
+        </div>
 
+        <div class="bd-example">
+          <p class="lead text-center p-0">
+            <strong>ExplorePipolin:</strong> a search tool for identifying and analyzing pipolins within bacterial genomes.
+          </p>
+        </div>
         <div class="row">
-          <div class="col-sm-6 p-3">
-            <div class="container bg-light p-3">
-              <p>Download ExplorePipolin</p>
+          <div class="col-sm-6 p-3 ">
+            <div class="container rounded bg-light p-3 shadow">
+              <p><strong>Download ExplorePipolin</strong></p>
               <div class="btn-group" role="group">
                 <button id="btnGroupDrop1" type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                   Download
@@ -102,59 +106,111 @@
             </div>
           </div>
           <div class="col-sm-6 p-3">
-            <div class="container bg-light p-3">
-              <p>View project on GitHub</p>
+            <div class="container rounded bg-light p-3 shadow">
+              <p><strong>View project on GitHub</strong></p>
               <a href="#" class="btn btn-dark">GitHub</a>
             </div>
           </div>
         </div>
-      
-                
-        <div class="bd-example">
-          <p class="lead">
-            ExplorePipolin is a search tool that identifies and analyses pipolins within bacterial genome.
-          </p>
-        </div>
+      </div>
+      </article>
 
-        <div class="bd-example">
-        <div class="accordion" id="accordionExample">
-          <div class="accordion-item">
-            <h4 class="accordion-header" id="headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                ¿What are Pipolins?
-              </button>
-            </h4>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                Pipolins constitute a new group of self-synthesizing or self-replicating mobile genetic elements (MGEs). They are widespread among diverse bacterial phyla and mitochondria.
+      <article class="my-3" id="Overview">
+         <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
+           <h3>Overview</h3>
+         </div> 
+
+        <div>
+
+          <div class="bd-example">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h4 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <strong>What are Pipolins?</strong>
+                </button>
+              </h4>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  Pipolins constitute a recently reported new group of integrative MGEs widespread among diverse bacterial
+                  phyla and also identifed in mitochondria as circular plasmids. The hallmark feature of the pipolins is a gene
+                  encoding for a replicative family B DNA polymerases (PolB) with an intrinsic de novo primer synthesis capacity
+                  called primer-independent PolBs (piPolBs), hence their name (piPolB-encoding elements). Preliminary phylogenetic 
+                  analyses indicated that piPolBs would form a third major branch of PolB, besides the protein-primed
+                  PolBs (pPolBs), found in a wide range of viruses and plasmids, and RNA-primed PolBs (rPolBs), which are the
+                  principal replicative enzymes of archaea and eukaryotes, some archaea and many dsDNA viruses3
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        </div>
-        
-        <div class="card">
-          <div class="card-header">
-          References
           </div>
-          <div class="card-body">
-            <ul>
+        
+          <div class="list-group">
+            <p class="list-group-item list-group-item-action list-group-item-primary p-3"><strong>Pipeline description</strong></p>
+            <p>ExplorePipolin pipeline is intended to check automatically whether a set of bacterial genome assemblies contains pipolins.
+               Then, it extracts and annotates the pipolins homogeneously. 
+               To this end, the pipeline performs the following tasks:</p>
+            <ol>
+              <strong><li>Pipolin detection</li></strong>
+              <p>Identification of main hallmarks:</p>
+              <ol class="mt-2">
+                <li>Prediction of the piPolB gene by BLAST search using a reference sequence.</li>
+                <li>Att terminal direct repeats detection by BLAST using a reference Att. 
+                  De novo search of att sites is performed if the previous search fails.</li>
+                <li>Find tRNA genes with ARAGORN</li>
+              </ol>
+              <strong><li class="mt-4">Pipolin scaffolding</li></strong>
+              <p>In some cases, att-repeats and piPolB were located on different contigs, 
+                posing a challenge for us to understand the order and orientation of the contigs.
+                In this step, we assume that att-repeats should be headed in the same direction as
+                they are direct repeats and that one of them could overlap with a tRNA gene on the 
+                opposite strand. For consistency, we referred to the latter att-repeat as attR and 
+                expected it always to be the rightmost att.</p>
+              <strong><li>Pipolin sequence extraction</li></strong>
+              <p>After identification of hallmark features and scaffolding (if needed) the sequence is extracted</p>
+              <strong><li>Pipolin annotation</li></strong>
+              <p>Pipolin genes need to be thoroughly and homogeneously annotated. 
+                Prokka pipeline fulfils this task annotating many prokaryotic genome features 
+                (protein-coding genes, tRNAs, rRNAs and non-coding RNAs among others).</p>
+              <strong><li>Att repeats annotation</li></strong>
+              <p>The information about found att repeats need to be included in the annotation separately,
+                 as gene prediction and annotation tools usually do not handle any repeats.</p>
+              <strong><li>Visualizing with EasyFig</li></strong>
+              <p>EasyFig provides comparative representation of the genetic structure of pipolins. 
+                We created a colouring scheme for the common pipolin genes and other meaningful features 
+                (att repeats and assembly gaps).</p>
+            </ol>
+          
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            Note: The current version (v.????) is designed and tested for E. coli pipolins, 
+            but the flexibility of the current pipeline allows an easy modification to extend the pipeline
+            for a wider range of bacteria in the future.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          </div>
+
+
+          <div class="card mt-2">
+            <div class="card-header">
+            References
+            </div>
+            <div class="card-body">
+              <ul>
+                <li><blockquote class="blockquote">
+                <p class="small">Primer-independent DNA synthesis by a family B DNA polymerase from self-replicating Mobile genetic elements.
+                </p>
+                <footer class="blockquote-footer">Redrejo-Rodríguez, M., et al. in <cite title="Source Title"><a href="https://www.cell.com/cell-reports/fulltext/S2211-1247(17)31486-9">Cell reports, 2017.</a></cite></footer>
+              </blockquote></li>
               <li><blockquote class="blockquote">
-              <p class="small">Primer-independent DNA synthesis by a family B DNA polymerase from self-replicating Mobile genetic elements.
-              </p>
-              <footer class="blockquote-footer">Redrejo-Rodríguez, M., et al. in <cite title="Source Title"><a href="https://www.cell.com/cell-reports/fulltext/S2211-1247(17)31486-9">Cell reports, 2017.</a></cite></footer>
-            </blockquote></li>
-            <li><blockquote class="blockquote">
-              <p class="small">High diversity and variability of pipolins among a wide range of pathogenic Escherichia coli strains.</p>
-              <footer class="blockquote-footer">Flament-Simon, S.C., de Toro, M., Chuprikova, L., et al. in <cite title="Source Title"><a href="https://www.nature.com/articles/s41598-020-69356-6">Scientific Reports, 2020.</a></cite></footer>
-            </blockquote></li>
-            </ul>
-          </div>
-        </div>   
-        
-        
-      </div>
-    </article>
+                <p class="small">High diversity and variability of pipolins among a wide range of pathogenic Escherichia coli strains.</p>
+                <footer class="blockquote-footer">Flament-Simon, S.C., de Toro, M., Chuprikova, L., et al. in <cite title="Source Title"><a href="https://www.nature.com/articles/s41598-020-69356-6">Scientific Reports, 2020.</a></cite></footer>
+              </blockquote></li>
+              </ul>
+            </div>
+          </div>   
+        </div>
+      </article>
+  </section>
   <section id="installation-and-requirements">
     <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3">Installation</h2>
     
@@ -171,6 +227,7 @@
           <li class="list-group-item">BLAST</li>
           <li class="list-group-item">ARAGORN</li>
           <li class="list-group-item">Prokka</li>
+          <li class="list-group-item">EasyFig (optional)</li>
         </ul>
         </div>
       
@@ -344,6 +401,15 @@
     </article>
       </section>
 
+  <section id="Examples">
+    <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3">Examples</h2>
+    
+  </section>
+
+  <section id="FAQs">
+    <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3">FAQs</h2>
+  </section>
+
       <section id="footer">
         <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3"></h2>
         
@@ -383,7 +449,11 @@
         </div>
         </footer>
         </article>
-          </section>   
+          </section>
+      
+
+
+
 </div>    
 
       <script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
@@ -392,4 +462,3 @@
   
   </body>
 </html>
-
