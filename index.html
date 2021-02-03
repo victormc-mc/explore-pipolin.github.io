@@ -38,13 +38,22 @@
     
 <header class="bd-header bg-dark py-3 d-flex align-items-stretch border-bottom border-dark">
   <div class="container-fluid d-flex align-items-center justify-content-between">
-    <p class="d-flex align-items-center fs-4 mb-0" style="color:#a7c9fc">
+    <p class="d-flex align-items-center fs-4 mb-0" style="color:#bdd6fd">
       <!--img src="./logo.svg" width="38" height="30" class="me-3" alt="Bootstrap"-->
       <strong>ExplorePipolin</strong>
     </p>
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#bdd6fd" class="bi bi-github" viewBox="0 0 16 16">
+      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#bdd6fd" class="bi bi-twitter" viewBox="0 0 16 16">
+        <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+      </svg>
+      <img src="assets/rs_logo.svg" width="20" height="20" ></img>
+    </div>
     <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-secondary" type="submit">Search</button>
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-secondary" type="submit"><p class="mb-0" style="color:#bdd6fd">Search</p></button>
     </form>
   </div>
 </header>
@@ -53,20 +62,44 @@
   <nav class="small" id="toc">
     <ul class="list-unstyled">
       <li class="my-2">
-        <button class="btn d-inline-flex align-items-center collapsed" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse" aria-controls="contents-collapse">Introduction</button>
-        <ul class="list-unstyled ps-3 collapse" id="contents-collapse">
+        <button class="btn d-inline-flex align-items-center collapsed" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#introduction-collapse" aria-controls="introduction-collapse">Introduction</button>
+        <ul class="list-unstyled ps-3 collapse" id="introduction-collapse">
           <li><a class="d-inline-flex align-items-center rounded" href="#welcome">Welcome to ExplorePipolin</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#overview">Overview</a></li>
         </ul>
       </li>
       <li class="my-2">
-        <button class="btn d-inline-flex align-items-center collapsed" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#forms-collapse" aria-controls="forms-collapse">Installation</button>
-        <ul class="list-unstyled ps-3 collapse" id="forms-collapse">
+        <button class="btn d-inline-flex align-items-center collapsed" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#installation-collapse" aria-controls="installation-collapse">Installation</button>
+        <ul class="list-unstyled ps-3 collapse" id="installation-collapse">
           <li><a class="d-inline-flex align-items-center rounded" href="#requirements">Requirements</a></li>
           <li><a class="d-inline-flex align-items-center rounded" href="#installation-source">Installation from source</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#installation-conda">Installation using Conda</a></li>
         </ul>
       </li>
       <li class="my-2">
-        <button class="btn d-inline-flex align-items-center collapsed" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#components-collapse" aria-controls="components-collapse">Quick usage</button>
+        <button class="btn d-inline-flex align-items-center collapsed" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#quick-usage-collapse" aria-controls="quick-usage-collapse">Quick usage</button>
+        <ul class="list-unstyled ps-3 collapse" id="quick-usage-collapse">
+          <li><a class="d-inline-flex align-items-center rounded" href="#test-run">Test run</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#output-files">Output files</a></li>
+        </ul>
+      </li>
+      <li class="my-2">
+        <button class="btn d-inline-flex align-items-center collapsed" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#running-collapse" aria-controls="running-collapse">Running</button>
+        <ul class="list-unstyled ps-3 collapse" id="running-collapse">
+          <li><a class="d-inline-flex align-items-center rounded" href="#running-docker">Running with Docker</a></li>
+        </ul>
+      </li>
+      <li class="my-2">
+        <button class="btn d-inline-flex align-items-center collapsed" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#examples-collapse" aria-controls="examples-collapse">Examples</button>
+        <ul class="list-unstyled ps-3 collapse" id="examples-collapse">
+          <li><a class="d-inline-flex align-items-center rounded" href="#requirements">Examples</a></li>
+        </ul>
+      </li>
+      <li class="my-2">
+        <button class="btn d-inline-flex align-items-center collapsed" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#FAQs-collapse" aria-controls="FAQs-collapse">FAQs</button>
+        <ul class="list-unstyled ps-3 collapse" id="FAQs-collapse">
+          <li><a class="d-inline-flex align-items-center rounded" href="#FAQs">FAQs</a></li>
+        </ul>
       </li>
     </ul>
   </nav>
@@ -74,7 +107,6 @@
 <div class="bd-cheatsheet container-fluid bg-white">
   <section id="Introduction">
     <h5 class="sticky-xl-top fw-bold"></h5>
-    
     <article class="my-3" id="welcome">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Welcome</h3>
@@ -138,7 +170,7 @@
                   called primer-independent PolBs (piPolBs), hence their name (piPolB-encoding elements). Preliminary phylogenetic 
                   analyses indicated that piPolBs would form a third major branch of PolB, besides the protein-primed
                   PolBs (pPolBs), found in a wide range of viruses and plasmids, and RNA-primed PolBs (rPolBs), which are the
-                  principal replicative enzymes of archaea and eukaryotes, some archaea and many dsDNA viruses3
+                  principal replicative enzymes of archaea and eukaryotes, some archaea and many dsDNA viruses.
                 </div>
               </div>
             </div>
@@ -235,12 +267,7 @@
   
     <article class="my-3" id="installation">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
-        <h3>Installation</h3>
-      </div>
-      
-      <div>
-        <div class="bd-example">
-        <p class="h2">Installation from Source</p>
+        <h3 id="installation-source">Installation from source</h3>
       </div>
        
       <div>
