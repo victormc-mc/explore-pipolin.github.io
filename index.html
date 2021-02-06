@@ -38,8 +38,7 @@
     
 <header class="bd-header bg-dark py-3 d-flex align-items-stretch border-bottom border-dark">
   <div class="container-fluid d-flex align-items-center justify-content-between">
-    <p class="d-flex align-items-center fs-4 mb-0" style="color:#bdd6fd">
-      <!--img src="./logo.svg" width="38" height="30" class="me-3" alt="Bootstrap"-->
+    <p class="d-flex align-items-center fs-4 mb-0 ms-4" style="color:#bdd6fd">
       <strong>ExplorePipolin</strong>
     </p>
     <div>
@@ -53,12 +52,12 @@
     </div>
     <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-secondary" type="submit"><p class="mb-0" style="color:#bdd6fd">Search</p></button>
+      <button class="btn btn-secondary" type="submit"><p class="mb-0" style="color:#c7d3e6">Search</p></button>
     </form>
   </div>
 </header>
 <aside class="bd-aside sticky-xl-top text-muted align-self-start mb-3 mb-xl-5 px-2">
-  <h2 class="h6 pt-4 pb-3 mb-4 border-bottom">List of contents</h2>
+  <h3 class="h6 pt-4 pb-3 mb-4 border-bottom" style="color:#485f88e8"><strong>List of contents</strong></h3>
   <nav class="small" id="toc">
     <ul class="list-unstyled">
       <li class="my-2">
@@ -77,8 +76,8 @@
         </ul>
       </li>
       <li class="my-2">
-        <button class="btn d-inline-flex align-items-center collapsed" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#quick-usage-collapse" aria-controls="quick-usage-collapse">Quick usage</button>
-        <ul class="list-unstyled ps-3 collapse" id="quick-usage-collapse">
+        <button class="btn d-inline-flex align-items-center collapsed" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#usage-collapse" aria-controls="usage-collapse">Usage</button>
+        <ul class="list-unstyled ps-3 collapse" id="usage-collapse">
           <li><a class="d-inline-flex align-items-center rounded" href="#test-run">Test run</a></li>
           <li><a class="d-inline-flex align-items-center rounded" href="#output-files">Output files</a></li>
         </ul>
@@ -122,8 +121,8 @@
             <strong>ExplorePipolin:</strong> a search tool for identifying and analyzing pipolins within bacterial genomes.
           </p>
         </div>
-        <div class="row">
-          <div class="col-sm-6 p-3 ">
+        <div class="row mt-0">
+          <div class="col-sm-6 p-3">
             <div class="container rounded bg-light p-3 shadow">
               <p><strong>Download ExplorePipolin</strong></p>
               <div class="btn-group" role="group">
@@ -234,7 +233,7 @@
                 <footer class="blockquote-footer">Redrejo-Rodríguez, M., et al. in <cite title="Source Title"><a href="https://www.cell.com/cell-reports/fulltext/S2211-1247(17)31486-9">Cell reports, 2017.</a></cite></footer>
               </blockquote></li>
               <li><blockquote class="blockquote">
-                <p class="small">High diversity and variability of pipolins among a wide range of pathogenic Escherichia coli strains.</p>
+                <p class="small">High diversity and variability of pipolins among a wide range of pathogenic <i>Escherichia coli</i> strains.</p>
                 <footer class="blockquote-footer">Flament-Simon, S.C., de Toro, M., Chuprikova, L., et al. in <cite title="Source Title"><a href="https://www.nature.com/articles/s41598-020-69356-6">Scientific Reports, 2020.</a></cite></footer>
               </blockquote></li>
               </ul>
@@ -244,11 +243,11 @@
       </article>
   </section>
   <section id="installation-and-requirements">
-    <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3">Installation</h2>
+    <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3 text-center" style="color:#0b2652">Installation</h2>
     
     <article class="my-3" id="requirements">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
-        <h3>Requirements</h3>
+        <h3 class="text-center" style="color:#0b2652">Requirements</h3>
       </div>
       
       <div>
@@ -267,7 +266,7 @@
   
     <article class="my-3" id="installation">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
-        <h3 id="installation-source">Installation from source</h3>
+        <h3 id="installation-source" class="text-center" style="color:#0b2652">Installation from source</h3>
       </div>
        
       <div>
@@ -297,7 +296,7 @@
       
     <article class="my-3" id="installation-conda">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
-        <h3>Installation unsing Conda</h3>
+        <h3 class="text-center" style="color:#0b2652">Installation unsing Conda</h3>
       </div>
       
       <div>
@@ -333,26 +332,52 @@
         </div>
     
    </section>
-  <section id="quick-usage">
-    <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3">Quick Usage</h2>
+  <section id="usage">
+    <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3">Usage</h2>
     
+    <article class="my-3" id="input-files">
+      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
+        <h3>Input files</h3>
+      </div>
+
+      <div class="bd-example">
+        <p>ExplorePipolin can take one or multiple genome files in FASTA format.
+          A genome sequence can be either a single complete chromosome (preferred) or contigs (in a single multiFASTA file). 
+          Draft genome files are also accepted since our pipeline includes a scaffolding task.</p>
+      </div>
+    </article>
+
+    <article class="my-3" id="running-explore-pipolin">
+      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
+        <h3>Running ExplorePipolin</h3>
+      </div>
+
+      <div class="bd-examle">
+        <p>To use Explore Pipolin just run the program in the command line along with the genome files and the desired options:</p>
+        <pre class="mt-0 bg-light"><code>
+        <strong>~$ explore_pipolin [OPTIONS] GENOMES...</strong>
+        </code></pre>
+      </div>
+    </article>
+
+
     <article class="my-3" id="test-run">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3>Test run</h3>
       </div>
       
       <div class="bd-example">
-      <p>As input, ExplorePipolin takes FASTA file(s) with genome sequence(s). A genome sequence can be either a single complete chromosome (preferred) or contigs (in a single multiFASTA file).</p>
-      <pre><code>
-      --> explore_pipolin -h
-      Usage: explore_pipolin [OPTIONS] GENOMES...
+      <p>ExplorePipolin includes a test run explaining the usage and the current options available:</p>
+      <pre class="mt-0 bg-light"><code>
+        <strong>~$ explore_pipolin -h</strong> 
+        Usage: explore_pipolin [OPTIONS] GENOMES...
 
-      ExplorePipolin is a search tool that identifies and analyses
-      pipolin elements  within bacterial genome(s).
+        ExplorePipolin is a search tool that identifies and analyses
+        pipolin elements  within bacterial genome(s).
 
-      Options:
-      --out-dir PATH  [required]
-      -h, --help      Show this message and exit.
+        Options:
+        --out-dir PATH  [required]
+        -h, --help      Show this message and exit.
       </pre></code>
       </div>
     </article>
@@ -415,7 +440,7 @@
       </div>
       
       <div class="bd-example">
-      <p>See <a href="https://docs.docker.com/install/">https://docs.docker.com/install/</a>to install Docker.</p>
+      <p>See <a href="https://docs.docker.com/install/">https://docs.docker.com/install/</a> to install Docker.</p>
       <p>NOTE: superuser privileges are required to run the analysis and around 3GB of disk space for the image.</p>
       <div class="bd-example bg-light"><pre><code>
       sudo docker pull docker.pkg.github.com/liubovch/explorepipolin/explore_pipolin:0.0.a1
