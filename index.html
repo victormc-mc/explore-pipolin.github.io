@@ -252,14 +252,55 @@
       
       <div>
         <div class="bd-example">
-        <ul class="list-group">
-          <li class="list-group-item list-group-item-primary" aria-current="true"><strong>List of requiered programs</strong></li>
-          <li class="list-group-item">pip</li>
-          <li class="list-group-item">BLAST</li>
-          <li class="list-group-item">ARAGORN</li>
-          <li class="list-group-item">Prokka</li>
-          <li class="list-group-item">EasyFig (optional)</li>
-        </ul>
+          <p>List of requiered dependencies:</p>
+
+          <table class="table">
+            <thead>
+              <tr class="table-primary" style="color:#0b2652">
+                <th scope="col">Program</th>
+                <th scope="col">Version</th>
+                <th scope="col">Installation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">pip</th>
+                <td>(find version)</td>
+                <td><code style="color:#000000">sudo apt install python3-pip</code></td>
+              </tr>
+              <tr>
+                <th scope="row">HMMER</th>
+                <td>"</td>
+                <td><code>sudo apt install hmmer</code></td>
+              </tr>
+              <tr>
+                <th scope="row">BLAST +</th>
+                <td>"</td>
+                <td><code>sudo apt install ncbi-blast+</code></td>
+              </tr>
+              <tr>
+                <th scope="row">ARAGORN</th>
+                <td>"</td>
+                <td><code>sudo apt install aragorn</code></td>
+              </tr>
+              <tr>
+                <th scope="row">Prokka</th>
+                <td>"</td>
+                <td><a href="https://github.com/tseemann/prokka">Prokka installation web page</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Prodigal</th>
+                <td>"</td>
+                <td><code>sudo apt install prodigal</code></td>
+              </tr>
+              <tr>
+                <th scope="row">EasyFig (Optional)</th>
+                <td>"</td>
+                <td><a href="https://mjsull.github.io/Easyfig/">EasyFig installation web page</td>
+              </tr>
+            </tbody>
+          </table>
+
         </div>
       
     </article>
@@ -286,7 +327,7 @@
           <p>NOTE: before installing, it is possible to run unit tests:</p>
         <ul>
             <li><code>pytest</code></li>
-            <li><code>python setup.py test</code>(from the source root directory)</li>
+            <li><code>python setup.py test</code> (from the source root directory)</li>
         </ul>
         <p>How to uninstall:
           <code>pip uninstall ExplorePipolin</code></p>
@@ -333,10 +374,10 @@
     
    </section>
   <section id="usage">
-    <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3">Usage</h2>
+    <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3 text-center" style="color:#0b2652">Usage</h2>
     
     <article class="my-3" id="input-files">
-      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
+      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2 text-center" style="color:#0b2652">
         <h3>Input files</h3>
       </div>
 
@@ -348,7 +389,7 @@
     </article>
 
     <article class="my-3" id="running-explore-pipolin">
-      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
+      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2 text-center" style="color:#0b2652">
         <h3>Running ExplorePipolin</h3>
       </div>
 
@@ -362,7 +403,7 @@
 
 
     <article class="my-3" id="test-run">
-      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
+      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2 text-center" style="color:#0b2652">
         <h3>Test run</h3>
       </div>
       
@@ -383,7 +424,7 @@
     </article>
         
     <article class="my-3" id="output-files">
-      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
+      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2 text-center" style="color:#0b2652">
         <h3>Output files</h3>
       </div>
       
@@ -432,11 +473,11 @@
       
   </section>
     <section id="running">
-    <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3">Running</h2>
+    <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3 text-center" style="color:#0b2652">Running</h2>
     
     <article class="my-3" id="running-docker">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
-        <h3>Running with Docker</h3>
+        <h3 class="text-center" style="color:#0b2652">Running with Docker</h3>
       </div>
       
       <div class="bd-example">
@@ -454,12 +495,48 @@
       </section>
 
   <section id="Examples">
-    <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3">Examples</h2>
+    <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3 text-center" style="color:#0b2652">Examples</h2>
     
+    <article class="my-3" id="requirements">
+      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
+        <h3 class="text-center" style="color:#0b2652">One genome</h3>
+      </div>
+      
+      <div>
+        <div class="bd-example">
+          <p>Here we provide an example of running ExplorePipolin with the <i>Escherichia coli</i>
+             3-373-03-S1_C2 <a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_000700265.1/">genome</a>:</p>
+          <ol>
+            <li>Run ExplorePipolin</li>
+        <pre class="mt-2 bg-light"><code>
+        <strong>~$ explore_pipolin E_coli_3-373_genome.fa --out-dir Results</strong>
+        </pre></code>
+            <li>Tasks processing</li>
+        <pre class="mt-2 bg-light"><code>
+        <strong>(PONER AQUI EL LOG??)</strong>
+        </pre></code>
+            <li>Analyze results</li>
+            <p></p>
+          </ol>
+        </div>
+      </div>
+
+    </article>
+
+
   </section>
 
+  <section id="Issues">
+    <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3 text-center" style="color:#0b2652">Issues</h2>
+
+    <div class="bd-example mt-5">
+      <div class="mt-2">We encourage you to report any problem related to the installing or running of ExplorePipolin
+        to the issues <a href="https://github.com/liubovch/ExplorePipolin/issues">web page</a>
+      </div>
+    </div>
+
   <section id="FAQs">
-    <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3">FAQs</h2>
+    <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3 text-center" style="color:#0b2652">FAQs</h2>
   </section>
 
       <section id="footer">
