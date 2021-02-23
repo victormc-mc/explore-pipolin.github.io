@@ -78,20 +78,29 @@
       <li class="my-2">
         <button class="btn d-inline-flex align-items-center collapsed" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#usage-collapse" aria-controls="usage-collapse">Usage</button>
         <ul class="list-unstyled ps-3 collapse" id="usage-collapse">
+          <li><a class="d-inline-flex align-items-center rounded" href="#input-files">Input files</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#running-ExplorePipolin">Running ExplorePipolin</a></li>
           <li><a class="d-inline-flex align-items-center rounded" href="#test-run">Test run</a></li>
-          <li><a class="d-inline-flex align-items-center rounded" href="#output-files">Output files</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#running-docker">Running with Docker</a></li>
         </ul>
       </li>
       <li class="my-2">
-        <button class="btn d-inline-flex align-items-center collapsed" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#running-collapse" aria-controls="running-collapse">Running</button>
-        <ul class="list-unstyled ps-3 collapse" id="running-collapse">
-          <li><a class="d-inline-flex align-items-center rounded" href="#running-docker">Running with Docker</a></li>
+        <button class="btn d-inline-flex align-items-center collapsed" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#output-files-collapse" aria-controls="output-files-collapse">Output files</button>
+        <ul class="list-unstyled ps-3 collapse" id="output-files-collapse">
+          <li><a class="d-inline-flex align-items-center rounded" href="#output-files-summary">Summary</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#output-files-atts">atts</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#output-files-atts_denovo">atts_denovo</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#output-files-logs">logs</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#output-files-pipolbs">pipolbs</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#output-files-pipolins">pipolins</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#output-files-prokka">prokka</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#output-files-trnas">trnas</a></li>
         </ul>
       </li>
       <li class="my-2">
         <button class="btn d-inline-flex align-items-center collapsed" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#examples-collapse" aria-controls="examples-collapse">Examples</button>
         <ul class="list-unstyled ps-3 collapse" id="examples-collapse">
-          <li><a class="d-inline-flex align-items-center rounded" href="#requirements">Examples</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#one-genome-example">One genome example</a></li>
         </ul>
       </li>
       <li class="my-2">
@@ -223,7 +232,7 @@
 
           <div class="card mt-2">
             <div class="card-header">
-            References
+            <strong>References</strong>
             </div>
             <div class="card-body">
               <ul>
@@ -305,9 +314,9 @@
       
     </article>
   
-    <article class="my-3" id="installation">
+    <article class="my-3" id="installation-source">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
-        <h3 id="installation-source" class="text-center" style="color:#0b2652">Installation from source</h3>
+        <h3 class="text-center" style="color:#0b2652">Installation from source</h3>
       </div>
        
       <div>
@@ -320,8 +329,8 @@
           <ul><li><pre><code>unzip 0.0.a1.zip && cd ExplorePipolin-0.0.a1</pre></code></li></ul></li>
           <li>Installing.
           <ul>
-            <li>Install in user site-package: <code>pip install</code></li>
-            <li> Requires superuser privileges: <code>sudo pip install</code></li>
+            <li>Install in user site-package: <code>pip install .</code></li>
+            <li> Requires superuser privileges: <code>sudo pip install .</code></li>
           </ul></li>
          </ol>
           <p>NOTE: before installing, it is possible to run unit tests:</p>
@@ -411,25 +420,65 @@
       <p>ExplorePipolin includes a test run explaining the usage and the current options available:</p>
       <pre class="mt-0 bg-light"><code>
         <strong>~$ explore_pipolin -h</strong> 
-        Usage: explore_pipolin [OPTIONS] GENOMES...
+        Usage: explore_pipolin [OPTIONS] GENOME...
 
-        ExplorePipolin is a search tool that identifies and analyses
-        pipolin elements  within bacterial genome(s).
-
+        ExplorePipolin is a search tool for prediction and analysis of pipolins,
+        bacterial mobile genetic elements.
+      
         Options:
-        --out-dir PATH  [required]
-        -h, --help      Show this message and exit.
+          --out-dir PATH              Output directory  [required]
+          --add-colours               Add colours to the final Genbank file features.
+                                      The genomic structure can be visualized further
+                                      using Easyfig.
+          --pipolb-hmm-profile PATH   If not provided, the default profile will be
+                                      used instead.
+          --ref-att PATH              Att sequence in FASTA file to use as 1st
+                                      priority. If not provided, the default file
+                                      will be used instead.
+          --percent-identity INTEGER  Minimum percent identity in direct repeats
+                                      search  [default: 85]
+          --proteins PATH             Prokka param: FASTA or GBK file to use as 1st
+                                      priority. If not provided, the default file
+                                      will be used instead.
+          --cpus INTEGER              Prokka param: Number of CPUs to use [0=all]
+                                      [default: 8]
+          -h, --help                  Show this message and exit.
+      
       </pre></code>
       </div>
     </article>
-        
-    <article class="my-3" id="output-files">
-      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2 text-center" style="color:#0b2652">
-        <h3>Output files</h3>
+    
+    <article class="my-3" id="running-docker">
+      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
+        <h3 class="text-center" style="color:#0b2652">Running with Docker</h3>
       </div>
       
+      <div class="bd-example">
+      <p>See <a href="https://docs.docker.com/install/">https://docs.docker.com/install/</a> to install Docker.</p>
+      <p>NOTE: superuser privileges are required to run the analysis and around 3GB of disk space for the image.</p>
+      <div class="bd-example bg-light"><pre><code>
+      sudo docker pull docker.pkg.github.com/liubovch/explorepipolin/explore_pipolin:0.0.a1
+      sudo docker tag docker.pkg.github.com/liubovch/explorepipolin/explore_pipolin:0.0.a1 explore_pipolin 
+      sudo docker run --rm explore_pipolin -h
+      sudo docker run --rm -v $(pwd):/output -w /output explore_pipolin 
+      --out-dir output ./input_genomes/*.fa   #(example run)
+      </code></pre></div>
+      </div>
+    </article>
+      
+  </section>
+
+  <section id="output-files">
+    <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3 text-center" style="color:#0b2652">Output files</h2>
+    
+    <article class="my-3" id="output-files-summary">
+      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
+        <h3 class="text-center" style="color:#0b2652">Summary</h3>
+      </div>
+
       <div class="db-example">
-      <p>The output directory will contain several folders:<p>
+      <div class="mt-2">The output directory will contain several folders:</div>
+        <div class="mt-2">
       <table class="table table-striped">
           <thead>
           <tr>
@@ -469,35 +518,22 @@
           </tbody>
         </table>
       </div>
-     </article>
-      
-  </section>
-    <section id="running">
-    <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3 text-center" style="color:#0b2652">Running</h2>
-    
-    <article class="my-3" id="running-docker">
-      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
-        <h3 class="text-center" style="color:#0b2652">Running with Docker</h3>
       </div>
-      
-      <div class="bd-example">
-      <p>See <a href="https://docs.docker.com/install/">https://docs.docker.com/install/</a> to install Docker.</p>
-      <p>NOTE: superuser privileges are required to run the analysis and around 3GB of disk space for the image.</p>
-      <div class="bd-example bg-light"><pre><code>
-      sudo docker pull docker.pkg.github.com/liubovch/explorepipolin/explore_pipolin:0.0.a1
-      sudo docker tag docker.pkg.github.com/liubovch/explorepipolin/explore_pipolin:0.0.a1 explore_pipolin 
-      sudo docker run --rm explore_pipolin -h
-      sudo docker run --rm -v $(pwd):/output -w /output explore_pipolin 
-      --out-dir output ./input_genomes/*.fa   #(example run)
-      </code></pre></div>
+
+    </article>
+
+    
+    <article class="my-3" id="output-files-atts">
+      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
+        <h3 class="text-center" style="color:#0b2652">atts</h3>
       </div>
     </article>
-      </section>
+  <section>
 
   <section id="Examples">
     <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3 text-center" style="color:#0b2652">Examples</h2>
     
-    <article class="my-3" id="requirements">
+    <article class="my-3" id="one-genome-example">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3 class="text-center" style="color:#0b2652">One genome</h3>
       </div>
@@ -509,21 +545,43 @@
           <ol>
             <li>Run ExplorePipolin</li>
         <pre class="mt-2 bg-light"><code>
-        <strong>~$ explore_pipolin E_coli_3-373_genome.fa --out-dir Results</strong>
+        <strong>~$ explore_pipolin E_coli.fa --out-dir Results --percent-identity 100</strong>
         </pre></code>
             <li>Tasks processing</li>
         <pre class="mt-2 bg-light"><code>
-        <strong>(PONER AQUI EL LOG??)</strong>
+          [2021-02-23 12:22:25+0100] INFO - prefect.FlowRunner | Beginning Flow run for 'MAIN'
+          [2021-02-23 12:22:25+0100] INFO - prefect.TaskRunner | Task 'pipolb_hmm_profile':
+             Starting task run...
+          [2021-02-23 12:22:26+0100] INFO - prefect.TaskRunner | Task 'pipolb_hmm_profile': 
+             Finished task run for task with final state: 'Success'
+          [2021-02-23 12:22:26+0100] INFO - prefect.TaskRunner | Task 'cpus': 
+             Starting task run...
+          [2021-02-23 12:22:26+0100] INFO - prefect.TaskRunner | Task 'cpus': 
+             Finished task run for task with final state: 'Success'
+          [2021-02-23 12:22:26+0100] INFO - prefect.TaskRunner | Task 'out_dir': 
+             Starting task run...
+          [2021-02-23 12:22:26+0100] INFO - prefect.TaskRunner | Task 'out_dir': 
+             Finished task run for task with final state: 'Success'
+          ...
         </pre></code>
+        <p>See <a href="example_files/output.log">output.log</a> for the complete running output.</p>
             <li>Analyze results</li>
-            <p></p>
+        <pre class="mt-2 bg-light"><code>
+        <strong>~$ ls Results</code>
+        <code style="color:#1e69af">atts  atts_denovo  logs  pipolbs  pipolins  prokka  trnas     
+        </code></strong></pre>
+        <p>See "Output files" section for more information.</p>
           </ol>
         </div>
       </div>
 
     </article>
 
-
+    <article class="my-3" id="multiple-genomes-example">
+      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
+        <h3 class="text-center" style="color:#0b2652">Multiple genomes</h3>
+      </div>
+    </article>
   </section>
 
   <section id="Issues">
