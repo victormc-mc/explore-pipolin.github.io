@@ -45,6 +45,7 @@
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#bdd6fd" class="bi bi-github" viewBox="0 0 16 16">
       <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
       </svg>
+       
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#bdd6fd" class="bi bi-twitter" viewBox="0 0 16 16">
         <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
       </svg>
@@ -101,6 +102,7 @@
         <button class="btn d-inline-flex align-items-center collapsed" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#examples-collapse" aria-controls="examples-collapse">Examples</button>
         <ul class="list-unstyled ps-3 collapse" id="examples-collapse">
           <li><a class="d-inline-flex align-items-center rounded" href="#one-genome-example">One genome example</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#multiple-genomes-example">Multiple genomes example</a></li>
         </ul>
       </li>
       <li class="my-2">
@@ -488,31 +490,31 @@
           </thead>
           <tbody>
           <tr>
-            <th scope="row"><code style="color:#10135F">pipolbs_search</code></th>
+            <th scope="row"><code style="color:#1e69af">pipolbs_search</code></th>
             <td>BLAST search results for piPolB genes</td>
           </tr>
           <tr>
-            <th scope="row"><code style="color:#10135F">atts_search</code></th>
+            <th scope="row"><code style="color:#1e69af">atts_search</code></th>
             <td>BLAST search results for the known att sites</td>
           </tr>
           <tr>
-            <th scope="row"><code style="color:#10135F">atts_denovo_search</class></th>
+            <th scope="row"><code style="color:#1e69af">atts_denovo_search</class></th>
             <td>Results of de novo search for att sites</td>
           </tr>
           <tr>
-            <th scope="row"><code style="color:#10135F">trnas_search</class></th>
+            <th scope="row"><code style="color:#1e69af">trnas_search</class></th>
             <td>ARAGORN search results for tRNAs/tmRNAs</td>
           </tr>
           <tr>
-            <th scope="row"><code style="color:#10135F">pipolin_sequences</class></th>
+            <th scope="row"><code style="color:#1e69af">pipolin_sequences</class></th>
             <td>extracted pipolin sequences in FASTA format</td>
           </tr>
           <tr>
-            <th scope="row"><code style="color:#10135F">prokka_results</class></th>
+            <th scope="row"><code style="color:#1e69af">prokka_results</class></th>
             <td>Prokka annotation results (check files description <a href="https://github.com/tseemann/prokka/blob/master/README.md#output-files">here</a>)</td>
           </tr>
           <tr>
-            <th scope="row"><code style="color:#10135F">results</class></th>
+            <th scope="row"><code style="color:#1e69af">results</class></th>
             <td>GenBank and GFF annotation results with the atts included, log files</td>
           </tr>
           </tbody>
@@ -527,6 +529,18 @@
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3 class="text-center" style="color:#0b2652">atts</h3>
       </div>
+
+      <div class="bd-example mt-2">
+      <p>The <strong style="color:#1e69af">atts</strong> folder contains all the results from the BLAST att search. 
+      These are known att sites, similar to the one given as reference in the running command 
+      (or to the <i>E. coli</i> 3-373-03-S1_C2 pipolin by default).
+      Inside this folder we can find one BLAST output file for each genome given in the input.</p>
+      <p>The results are presented in BLAST output format 5 (XML). Here we show an example from the 
+        <i>E. coli</i> 3-373-03-S1_C2 atts.
+      </p>
+      </div>
+
+
     </article>
   <section>
 
@@ -581,6 +595,88 @@
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
         <h3 class="text-center" style="color:#0b2652">Multiple genomes</h3>
       </div>
+
+      <div>
+        <div class="bd-example">
+          <p>We also wanted to show and example of running ExplorePipolin with multiple genomes.
+            To this purpose we have selected the genomes from the following <i>E. coli</i> strains:
+          </p>
+          <ul>
+            <li><i>Escherichia coli</i> <a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_000700265.1/">3-373-03-S1_C2</a></li>
+            <li><i>Escherichia coli</i> <a href="https://www.ncbi.nlm.nih.gov/nuccore/CP024256.1/">ATCC 43886</a></li>
+            <li><i>Escherichia coli</i> <a href="https://www.ncbi.nlm.nih.gov/nuccore/CP029687.1/">E706</a></li>
+            <li><i>Escherichia coli</i> <a href="https://www.ncbi.nlm.nih.gov/nuccore/CP034745.1/">L100</a></li>
+            <li><i>Escherichia coli</i> <a href="https://www.ncbi.nlm.nih.gov/nuccore/CP002291.1/">P12b</a></li>
+          </ul>
+          <ol>
+            <li>Run ExplorePipolin</li>
+        <pre class="mt-2 bg-light"><code>
+        <strong>~$ explore_pipolin *.fa --out-dir Results_multiple_genomes --percent-identity 100</strong>
+        </pre></code>
+            <li>Tasks processing</li>
+        <pre class="mt-2 bg-light"><code>
+          [2021-02-24 12:52:29+0100] INFO - prefect.FlowRunner | Beginning Flow run for 'MAIN'
+          [2021-02-24 12:52:29+0100] INFO - prefect.TaskRunner | Task 'percent_identity': 
+             Starting task run...
+          [2021-02-24 12:52:29+0100] INFO - prefect.TaskRunner | Task 'percent_identity': 
+             Finished task run for task with final state: 'Success'
+          [2021-02-24 12:52:29+0100] INFO - prefect.TaskRunner | Task 'add_colours': 
+             Starting task run...
+          [2021-02-24 12:52:29+0100] INFO - prefect.TaskRunner | Task 'add_colours': 
+             Finished task run for task with final state: 'Success'
+          [2021-02-24 12:52:29+0100] INFO - prefect.TaskRunner | Task 'genome_file': 
+             Starting task run...
+          [2021-02-24 12:52:29+0100] INFO - prefect.TaskRunner | Task 'genome_file': 
+             Finished task run for task with final state: 'Success'
+          [2021-02-24 12:52:29+0100] INFO - prefect.TaskRunner | Task 'ref_att': 
+             Starting task run...
+          [2021-02-24 12:52:29+0100] INFO - prefect.TaskRunner | Task 'ref_att': 
+             Finished task run for task with final state: 'Success'
+          [2021-02-24 12:52:29+0100] INFO - prefect.TaskRunner | Task 'out_dir': 
+             Starting task run...
+          [2021-02-24 12:52:29+0100] INFO - prefect.TaskRunner | Task 'out_dir': 
+             Finished task run for task with final state: 'Success'
+          [2021-02-24 12:52:29+0100] INFO - prefect.TaskRunner | Task 'cpus': 
+             Starting task run...
+          [2021-02-24 12:52:29+0100] INFO - prefect.TaskRunner | Task 'cpus': 
+             Finished task run for task with final state: 'Success'
+          [2021-02-24 12:52:30+0100] INFO - prefect.TaskRunner | Task 'create_genome': 
+             Starting task run...
+          [2021-02-24 12:52:30+0100] INFO - prefect.TaskRunner | Task 'create_genome': 
+             Finished task run for task with final state: 'Mapped'
+          [2021-02-24 12:52:30+0100] INFO - prefect.TaskRunner | Task 'create_genome[0]': 
+             Starting task run...
+          [2021-02-24 12:52:30+0100] INFO - prefect.TaskRunner | Task 'create_genome[0]': 
+             Finished task run for task with final state: 'Success'
+          [2021-02-24 12:52:30+0100] INFO - prefect.TaskRunner | Task 'create_genome[1]': 
+             Starting task run...
+          [2021-02-24 12:52:30+0100] INFO - prefect.TaskRunner | Task 'create_genome[1]': 
+             Finished task run for task with final state: 'Success'
+          [2021-02-24 12:52:30+0100] INFO - prefect.TaskRunner | Task 'create_genome[2]': 
+             Starting task run...
+          [2021-02-24 12:52:30+0100] INFO - prefect.TaskRunner | Task 'create_genome[2]': 
+             Finished task run for task with final state: 'Success'
+          [2021-02-24 12:52:30+0100] INFO - prefect.TaskRunner | Task 'create_genome[3]': 
+             Starting task run...
+          [2021-02-24 12:52:30+0100] INFO - prefect.TaskRunner | Task 'create_genome[3]': 
+             Finished task run for task with final state: 'Success'
+          [2021-02-24 12:52:30+0100] INFO - prefect.TaskRunner | Task 'create_genome[4]': 
+             Starting task run...
+          [2021-02-24 12:52:30+0100] INFO - prefect.TaskRunner | Task 'create_genome[4]': 
+             Finished task run for task with final state: 'Success'
+          ...
+        </pre></code>
+        <p>See <a href="example_files/output.log">output.log</a> for the complete running output.</p>
+            <li>Analyze results</li>
+        <pre class="mt-2 bg-light"><code>
+        <strong>~$ ls Results</code>
+        <code style="color:#1e69af">atts  atts_denovo  logs  pipolbs  pipolins  prokka  trnas     
+        </code></strong></pre>
+        <p>Again, see "Output files" section for more information.</p>
+          </ol>
+        </div>
+      </div>
+
     </article>
   </section>
 
