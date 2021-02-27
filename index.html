@@ -231,7 +231,6 @@
             </div>
           </div>
 
-
           <div class="card mt-2">
             <div class="card-header">
             <strong>References</strong>
@@ -490,32 +489,32 @@
           </thead>
           <tbody>
           <tr>
-            <th scope="row"><code style="color:#1e69af">pipolbs_search</code></th>
-            <td>BLAST search results for piPolB genes</td>
-          </tr>
-          <tr>
-            <th scope="row"><code style="color:#1e69af">atts_search</code></th>
+            <th scope="row"><code style="color:#1e69af">atts</code></th>
             <td>BLAST search results for the known att sites</td>
           </tr>
           <tr>
-            <th scope="row"><code style="color:#1e69af">atts_denovo_search</class></th>
+            <th scope="row"><code style="color:#1e69af">atts_denovo</class></th>
             <td>Results of de novo search for att sites</td>
           </tr>
           <tr>
-            <th scope="row"><code style="color:#1e69af">trnas_search</class></th>
-            <td>ARAGORN search results for tRNAs/tmRNAs</td>
+            <th scope="row"><code style="color:#1e69af">logs</class></th>
+            <td>log file from ExplorePipolin run</td>
           </tr>
           <tr>
-            <th scope="row"><code style="color:#1e69af">pipolin_sequences</class></th>
+            <th scope="row"><code style="color:#1e69af">pipolbs</code></th>
+            <td>BLAST search results for piPolB genes</td>
+          </tr>
+          <tr>
+            <th scope="row"><code style="color:#1e69af">pipolin</class></th>
             <td>extracted pipolin sequences in FASTA format</td>
           </tr>
           <tr>
-            <th scope="row"><code style="color:#1e69af">prokka_results</class></th>
+            <th scope="row"><code style="color:#1e69af">prokka</class></th>
             <td>Prokka annotation results (check files description <a href="https://github.com/tseemann/prokka/blob/master/README.md#output-files">here</a>)</td>
           </tr>
           <tr>
-            <th scope="row"><code style="color:#1e69af">results</class></th>
-            <td>GenBank and GFF annotation results with the atts included, log files</td>
+            <th scope="row"><code style="color:#1e69af">trnas</class></th>
+            <td>ARAGORN search results for tRNAs/tmRNAs</td>
           </tr>
           </tbody>
         </table>
@@ -535,14 +534,113 @@
       These are known att sites, similar to the one given as reference in the running command 
       (or to the <i>E. coli</i> 3-373-03-S1_C2 pipolin by default).
       Inside this folder we can find one BLAST output file for each genome given in the input.</p>
-      <p>The results are presented in BLAST output format 5 (XML). Here we show an example from the 
-        <i>E. coli</i> 3-373-03-S1_C2 atts.
+      <p>The results are presented in BLAST output format 5 (XML). Here we show part of an example from the 
+        <i>E. coli</i> 3-373-03-S1_C2 atts:
+        <div class="bd-example mt-0 border border-2">
+          <img src="images/Ec_3-373-fmt5.png" class="img-fluid"></img>
+        </div>
       </p>
       </div>
-
-
     </article>
-  <section>
+
+    <article class="my-3" id="output-files-atts_denovo">
+      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
+        <h3 class="text-center" style="color:#0b2652">atts_denovo</h3>
+      </div>
+
+      <div class="bd-example mt-2">
+      <p>The <strong style="color:#1e69af">atts_denovo</strong> folder contains the results from the <i>de novo</i> att search. 
+      Inside this folder we can find 5 files for each genome given in the input. Again, we've presented here part of each file
+      from the <i>E. coli</i> 3-373-03-S1_C2 example:
+      <ul class="mt-0">
+        <li>.atts_denovo file (CAMBIAR)</li>
+        <div class="bd-example mt-2 border border-2">
+          <img src="images/Ec_3-373-fmt5.png" class="img-fluid"></img>
+        </div>
+      </ul>
+      </p>
+      </div>
+    </article>
+
+    <article class="my-3" id="output-files-logs">
+      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
+        <h3 class="text-center" style="color:#0b2652">logs</h3>
+      </div>
+
+      <div class="bd-example mt-2">
+      <p>Inside the <strong style="color:#1e69af">logs</strong> folder you can find 
+        one .log file for each genome input. This files containts all the information
+        related to the task execution of ExplorePipolin (similar to the default 
+        output of the program). 
+      </p>
+      <p class="mt-0">Example log file from the <i>E. coli</i> 3-373-03-S1_C2 run:</p>
+      <div class="bd-example mt-2 border border-2">
+        <img src="images/Ec_3-373-log.png" class="img-fluid"></img>
+      </div>
+      </div>
+    </article>
+
+    <article class="my-3" id="output-files-pipolbs">
+      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
+        <h3 class="text-center" style="color:#0b2652">pipolbs</h3>
+      </div>
+
+      <div class="bd-example mt-2">
+      <p>The <strong style="color:#1e69af">pipolbs</strong> folder contains the search results
+        fot piPolB genes performed by BLAST. Here we can find 2 files for each genome input:</p>
+      <ul class="mt-0">
+        <li>.faa files: multiFASTA files with all the BLAST hits. 
+          <i>E. coli</i> 3-373-03-S1_C2 example:
+        </li>
+      </ul>
+        <div class="bd-example mt-2 border border-2">
+          <img src="images/Ec_3-373-pipolb-faa.png" class="img-fluid"></img>
+        </div>
+        <ul class="mt-4">
+          <li>.tbl files: (Ask explanation)
+            <i>E. coli</i> 3-373-03-S1_C2 example:
+          </li>
+        </ul>
+          <div class="bd-example mt-2 border border-2">
+            <img src="images/Ec_3-373-pipolb-tbl.png" class="img-fluid"></img>
+          </div>
+      </div>
+    </article>
+
+    <article class="my-3" id="output-files-pipolins">
+      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
+        <h3 class="text-center" style="color:#0b2652">pipolins</h3>
+      </div>
+
+      <div class="bd-example mt-2">
+      <p>The <strong style="color:#1e69af">pipolins</strong> folder contains:
+      </p>
+      </div>
+    </article>
+
+    <article class="my-3" id="output-files-prokka">
+      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
+        <h3 class="text-center" style="color:#0b2652">prokka</h3>
+      </div>
+
+      <div class="bd-example mt-2">+
+      <p>The <strong style="color:#1e69af">prokka</strong> folder contains:
+      </p>
+      </div>
+    </article>
+
+    <article class="my-3" id="output-files-trnas">
+      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
+        <h3 class="text-center" style="color:#0b2652">trnas</h3>
+      </div>
+
+      <div class="bd-example mt-2">
+      <p>The <strong style="color:#1e69af">trnas</strong> folder contains:
+      </p>
+      </div>
+    </article>
+
+  </section>
 
   <section id="Examples">
     <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3 text-center" style="color:#0b2652">Examples</h2>
@@ -559,7 +657,7 @@
           <ol>
             <li>Run ExplorePipolin</li>
         <pre class="mt-2 bg-light"><code>
-        <strong>~$ explore_pipolin E_coli.fa --out-dir Results --percent-identity 100</strong>
+        <strong>~$ explore_pipolin E_coli.fa --out-dir Results --percent-identity 100 --add-colours</strong>
         </pre></code>
             <li>Tasks processing</li>
         <pre class="mt-2 bg-light"><code>
@@ -585,6 +683,10 @@
         <code style="color:#1e69af">atts  atts_denovo  logs  pipolbs  pipolins  prokka  trnas     
         </code></strong></pre>
         <p>See "Output files" section for more information.</p>
+        <li>Visualize pipolin genetic structure with EasyFig (legend added manually):</li>
+        <div class="bd-example mt-2 border border-2">
+          <img src="images/Ec_3-373_EasyFig.png" class="img-fluid"></img>
+        </div>
           </ol>
         </div>
       </div>
@@ -598,7 +700,7 @@
 
       <div>
         <div class="bd-example">
-          <p>We also wanted to show and example of running ExplorePipolin with multiple genomes.
+          <p>We also wanted to show an example of running ExplorePipolin with multiple genomes.
             To this purpose we have selected the genomes from the following <i>E. coli</i> strains:
           </p>
           <ul>
@@ -611,7 +713,7 @@
           <ol>
             <li>Run ExplorePipolin</li>
         <pre class="mt-2 bg-light"><code>
-        <strong>~$ explore_pipolin *.fa --out-dir Results_multiple_genomes --percent-identity 100</strong>
+        <strong>~$ explore_pipolin *.fa --out-dir Results_multiple_genomes --percent-identity 100 --add-colours</strong>
         </pre></code>
             <li>Tasks processing</li>
         <pre class="mt-2 bg-light"><code>
@@ -745,3 +847,4 @@
   
   </body>
 </html>
+
