@@ -281,17 +281,17 @@
               <tr>
                 <th scope="row">HMMER</th>
                 <td>"</td>
-                <td><code>sudo apt install hmmer</code></td>
+                <td><code style="color:#000000">sudo apt install hmmer</code></td>
               </tr>
               <tr>
                 <th scope="row">BLAST +</th>
                 <td>"</td>
-                <td><code>sudo apt install ncbi-blast+</code></td>
+                <td><code style="color:#000000">sudo apt install ncbi-blast+</code></td>
               </tr>
               <tr>
                 <th scope="row">ARAGORN</th>
                 <td>"</td>
-                <td><code>sudo apt install aragorn</code></td>
+                <td><code style="color:#000000">sudo apt install aragorn</code></td>
               </tr>
               <tr>
                 <th scope="row">Prokka</th>
@@ -301,7 +301,7 @@
               <tr>
                 <th scope="row">Prodigal</th>
                 <td>"</td>
-                <td><code>sudo apt install prodigal</code></td>
+                <td><code style="color:#000000">sudo apt install prodigal</code></td>
               </tr>
               <tr>
                 <th scope="row">EasyFig (Optional)</th>
@@ -325,22 +325,22 @@
         <ol>
           <li>Install the requirements (see above).</li>
           <li>Download software
-          <ul><li><pre><code>wget https://github.com/liubovch/ExplorePipolin/archive/0.0.a1.zip.</pre></code></li></ul></li>
+          <ul><li><pre><code style="color:#5c5c5c">wget https://github.com/liubovch/ExplorePipolin/archive/0.0.a1.zip.</pre></code></li></ul></li>
           <li>Unzip content.
-          <ul><li><pre><code>unzip 0.0.a1.zip && cd ExplorePipolin-0.0.a1</pre></code></li></ul></li>
+          <ul><li><pre><code style="color:#5c5c5c">unzip 0.0.a1.zip && cd ExplorePipolin-0.0.a1</pre></code></li></ul></li>
           <li>Installing.
           <ul>
-            <li>Install in user site-package: <code>pip install .</code></li>
-            <li> Requires superuser privileges: <code>sudo pip install .</code></li>
+            <li>Install in user site-package: <code style="color:#5c5c5c">pip install .</code></li>
+            <li> Requires superuser privileges: <code style="color:#5c5c5c">sudo pip install .</code></li>
           </ul></li>
          </ol>
           <p>NOTE: before installing, it is possible to run unit tests:</p>
         <ul>
-            <li><code>pytest</code></li>
-            <li><code>python setup.py test</code> (from the source root directory)</li>
+            <li><code style="color:#5c5c5c">pytest</code></li>
+            <li><code style="color:#5c5c5c">python setup.py test</code> (from the source root directory)</li>
         </ul>
         <p>How to uninstall:
-          <code>pip uninstall ExplorePipolin</code></p>
+          <code style="color:#5c5c5c">pip uninstall ExplorePipolin</code></p>
         </div>
        </div>
     </article>
@@ -351,12 +351,14 @@
       </div>
       
       <div>
-        <div class="bd-example">
+        <div class="bd-example"> 
         <p>Before installing ExplorePipolin, make sure you are running the latest version of Conda</p>
+        <div class="bd-example bg-light">
         <ul>
-            <li><code>conda update conda</code></li>
-            <li><code>conda install wget</code></li>
+            <li><code style="color:#000000">conda update conda</code></li>
+            <li><code style="color:#000000">conda install wget</code></li>
         </ul>
+        </div>
       </div>
        
       <div>
@@ -364,20 +366,20 @@
         <ol>
           <li>Create a new environment thar is specific for ExplorePipolin. You can choose whatever name you'd like for the environment.
             <ul>
-              <li><code>wget https://github.com/liubovch/ExplorePipolin/releases/download/0.0.a1/explore-pipolin-0.0.a1-py_0.yml</code></li>
-              <li><code>conda env create -n ExplorePipolin-0.0.a1 --file explore-pipolin-0.0.a1-py_0.yml</code></li>
+              <li><code style="color:#5c5c5c">wget https://github.com/liubovch/ExplorePipolin/releases/download/0.0.a1/explore-pipolin-0.0.a1-py_0.yml</code></li>
+              <li><code style="color:#5c5c5c">conda env create -n ExplorePipolin-0.0.a1 --file explore-pipolin-0.0.a1-py_0.yml</code></li>
             </ul></li>
          <li>Download and install ExplorePipolin into the created environment:
             <ul>
-              <li><code>wget https://github.com/liubovch/ExplorePipolin/releases/download/0.0.a1/explore-pipolin-0.0.a1-py_0.tar.bz2</code></li>
-              <li><code>conda install -n ExplorePipolin-0.0.a1 explore-pipolin-0.0.a1-py_0.tar.bz2</code></li>
+              <li><code style="color:#5c5c5c">wget https://github.com/liubovch/ExplorePipolin/releases/download/0.0.a1/explore-pipolin-0.0.a1-py_0.tar.bz2</code></li>
+              <li><code style="color:#5c5c5c">conda install -n ExplorePipolin-0.0.a1 explore-pipolin-0.0.a1-py_0.tar.bz2</code></li>
             </ul></li>
          <li>Clean up (optional):
-           <ul><li><code>rm explore-pipolin-0.0.a1-py_0.yml explore-pipolin-0.0.a1-py_0.tar.bz2</code></li></ul></li>
+           <ul><li><code style="color:#5c5c5c">rm explore-pipolin-0.0.a1-py_0.yml explore-pipolin-0.0.a1-py_0.tar.bz2</code></li></ul></li>
          <li>Activate the environment and check the installation:
            <ul>
-             <li><code>conda activate ExplorePipolin-0.0.a1</code></li>
-             <li><code>explore_pipolin -h</code></li>
+             <li><code style="color:#5c5c5c">conda activate ExplorePipolin-0.0.a1</code></li>
+             <li><code style="color:#5c5c5c">explore_pipolin -h</code></li>
            </ul></li>
           </div>
         </div>
@@ -553,14 +555,38 @@
       Inside this folder we can find 5 files for each genome given in the input. Again, we've presented here part of each file
       from the <i>E. coli</i> 3-373-03-S1_C2 example:
       <ul class="mt-0">
-        <li>.atts_denovo file (CAMBIAR)</li>
+        <li>.atts_denovo file (Empty file, he dejado uno de prueba)</li></ul>
         <div class="bd-example mt-2 border border-2">
           <img src="images/Ec_3-373-fmt5.png" class="img-fluid"></img>
+        </div>
+      <ul class="mt-4">
+        <li>.repeats file: includes information about <i>de novo</i> repeats location.</li></ul>
+        <div class="bd-example mt-2 border border-2">
+          <img src="images/Ec_3-373_denovo_repeats.png" class="img-fluid mt-2"></img>
+        </div>
+      </ul>
+      <ul class="mt-4">
+        <li>.fmt5 file: contains information about the blast hits during <i>de novo</i> search.</li></ul>
+        <div class="bd-example mt-2 border border-2">
+          <img src="images/Ec_3-373_denovo_fmt5.png" class="img-fluid"></img>
+        </div>
+      </ul>
+      <ul class="mt-4">
+        <li>.left file: sequence of the left repeat.</li></ul>
+        <div class="bd-example mt-2 border border-2">
+          <img src="images/Ec_3-373_denovo_left.png" class="img-fluid mt-2"></img>
+        </div>
+      </ul>
+      <ul class="mt-4">
+        <li>.right file: sequence of the right repeat.</li></ul>
+        <div class="bd-example mt-2 border border-2">
+          <img src="images/Ec_3-373_denovo_right.png" class="img-fluid mt-2"></img>
         </div>
       </ul>
       </p>
       </div>
     </article>
+
 
     <article class="my-3" id="output-files-logs">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
@@ -687,141 +713,12 @@
   <section id="Examples">
     <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3 text-center" style="color:#0b2652">Examples</h2>
     
-    <article class="my-3" id="one-genome-example">
-      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
-        <h3 class="text-center" style="color:#0b2652">One genome</h3>
+    <div class="bd-example mt-5">
+      <div class="mt-2">Some running examples of ExplorePipolin pipeline are shown in the
+        <a href="examples.html">examples web page</a>.
       </div>
-      
-      <div>
-        <div class="bd-example">
-          <p>Here we provide an example of running ExplorePipolin with the <i>Escherichia coli</i>
-             3-373-03-S1_C2 <a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_000700265.1/">genome</a>:</p>
-          <ol>
-            <li>Run ExplorePipolin</li>
-        <pre class="mt-2 bg-light"><code>
-        <strong>~$ explore_pipolin E_coli.fa --out-dir Results --percent-identity 100 --add-colours</strong>
-        </pre></code>
-            <li>Tasks processing</li>
-        <pre class="mt-2 bg-light"><code>
-          [2021-02-23 12:22:25+0100] INFO - prefect.FlowRunner | Beginning Flow run for 'MAIN'
-          [2021-02-23 12:22:25+0100] INFO - prefect.TaskRunner | Task 'pipolb_hmm_profile':
-             Starting task run...
-          [2021-02-23 12:22:26+0100] INFO - prefect.TaskRunner | Task 'pipolb_hmm_profile': 
-             Finished task run for task with final state: 'Success'
-          [2021-02-23 12:22:26+0100] INFO - prefect.TaskRunner | Task 'cpus': 
-             Starting task run...
-          [2021-02-23 12:22:26+0100] INFO - prefect.TaskRunner | Task 'cpus': 
-             Finished task run for task with final state: 'Success'
-          [2021-02-23 12:22:26+0100] INFO - prefect.TaskRunner | Task 'out_dir': 
-             Starting task run...
-          [2021-02-23 12:22:26+0100] INFO - prefect.TaskRunner | Task 'out_dir': 
-             Finished task run for task with final state: 'Success'
-          ...
-        </pre></code>
-        <p>See <a href="example_files/output.log">output.log</a> for the complete running output.</p>
-            <li>Analyze results</li>
-        <pre class="mt-2 bg-light"><code>
-        <strong>~$ ls Results</code>
-        <code style="color:#1e69af">atts  atts_denovo  logs  pipolbs  pipolins  prokka  trnas     
-        </code></strong></pre>
-        <p>See "Output files" section for more information.</p>
-        <li>Visualize pipolin genetic structure with EasyFig (legend added manually):</li>
-        <div class="bd-example mt-2 border border-2">
-          <img src="images/Ec_3-373_EasyFig.png" class="img-fluid"></img>
-        </div>
-          </ol>
-        </div>
-      </div>
+    </div>
 
-    </article>
-
-    <article class="my-3" id="multiple-genomes-example">
-      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
-        <h3 class="text-center" style="color:#0b2652">Multiple genomes</h3>
-      </div>
-
-      <div>
-        <div class="bd-example">
-          <p>We also wanted to show an example of running ExplorePipolin with multiple genomes.
-            To this purpose we have selected the genomes from the following <i>E. coli</i> strains:
-          </p>
-          <ul>
-            <li><i>Escherichia coli</i> <a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_000700265.1/">3-373-03-S1_C2</a></li>
-            <li><i>Escherichia coli</i> <a href="https://www.ncbi.nlm.nih.gov/nuccore/CP024256.1/">ATCC 43886</a></li>
-            <li><i>Escherichia coli</i> <a href="https://www.ncbi.nlm.nih.gov/nuccore/CP029687.1/">E706</a></li>
-            <li><i>Escherichia coli</i> <a href="https://www.ncbi.nlm.nih.gov/nuccore/CP034745.1/">L100</a></li>
-            <li><i>Escherichia coli</i> <a href="https://www.ncbi.nlm.nih.gov/nuccore/CP002291.1/">P12b</a></li>
-          </ul>
-          <ol>
-            <li>Run ExplorePipolin</li>
-        <pre class="mt-2 bg-light"><code>
-        <strong>~$ explore_pipolin *.fa --out-dir Results_multiple_genomes --percent-identity 100 --add-colours</strong>
-        </pre></code>
-            <li>Tasks processing</li>
-        <pre class="mt-2 bg-light"><code>
-          [2021-02-24 12:52:29+0100] INFO - prefect.FlowRunner | Beginning Flow run for 'MAIN'
-          [2021-02-24 12:52:29+0100] INFO - prefect.TaskRunner | Task 'percent_identity': 
-             Starting task run...
-          [2021-02-24 12:52:29+0100] INFO - prefect.TaskRunner | Task 'percent_identity': 
-             Finished task run for task with final state: 'Success'
-          [2021-02-24 12:52:29+0100] INFO - prefect.TaskRunner | Task 'add_colours': 
-             Starting task run...
-          [2021-02-24 12:52:29+0100] INFO - prefect.TaskRunner | Task 'add_colours': 
-             Finished task run for task with final state: 'Success'
-          [2021-02-24 12:52:29+0100] INFO - prefect.TaskRunner | Task 'genome_file': 
-             Starting task run...
-          [2021-02-24 12:52:29+0100] INFO - prefect.TaskRunner | Task 'genome_file': 
-             Finished task run for task with final state: 'Success'
-          [2021-02-24 12:52:29+0100] INFO - prefect.TaskRunner | Task 'ref_att': 
-             Starting task run...
-          [2021-02-24 12:52:29+0100] INFO - prefect.TaskRunner | Task 'ref_att': 
-             Finished task run for task with final state: 'Success'
-          [2021-02-24 12:52:29+0100] INFO - prefect.TaskRunner | Task 'out_dir': 
-             Starting task run...
-          [2021-02-24 12:52:29+0100] INFO - prefect.TaskRunner | Task 'out_dir': 
-             Finished task run for task with final state: 'Success'
-          [2021-02-24 12:52:29+0100] INFO - prefect.TaskRunner | Task 'cpus': 
-             Starting task run...
-          [2021-02-24 12:52:29+0100] INFO - prefect.TaskRunner | Task 'cpus': 
-             Finished task run for task with final state: 'Success'
-          [2021-02-24 12:52:30+0100] INFO - prefect.TaskRunner | Task 'create_genome': 
-             Starting task run...
-          [2021-02-24 12:52:30+0100] INFO - prefect.TaskRunner | Task 'create_genome': 
-             Finished task run for task with final state: 'Mapped'
-          [2021-02-24 12:52:30+0100] INFO - prefect.TaskRunner | Task 'create_genome[0]': 
-             Starting task run...
-          [2021-02-24 12:52:30+0100] INFO - prefect.TaskRunner | Task 'create_genome[0]': 
-             Finished task run for task with final state: 'Success'
-          [2021-02-24 12:52:30+0100] INFO - prefect.TaskRunner | Task 'create_genome[1]': 
-             Starting task run...
-          [2021-02-24 12:52:30+0100] INFO - prefect.TaskRunner | Task 'create_genome[1]': 
-             Finished task run for task with final state: 'Success'
-          [2021-02-24 12:52:30+0100] INFO - prefect.TaskRunner | Task 'create_genome[2]': 
-             Starting task run...
-          [2021-02-24 12:52:30+0100] INFO - prefect.TaskRunner | Task 'create_genome[2]': 
-             Finished task run for task with final state: 'Success'
-          [2021-02-24 12:52:30+0100] INFO - prefect.TaskRunner | Task 'create_genome[3]': 
-             Starting task run...
-          [2021-02-24 12:52:30+0100] INFO - prefect.TaskRunner | Task 'create_genome[3]': 
-             Finished task run for task with final state: 'Success'
-          [2021-02-24 12:52:30+0100] INFO - prefect.TaskRunner | Task 'create_genome[4]': 
-             Starting task run...
-          [2021-02-24 12:52:30+0100] INFO - prefect.TaskRunner | Task 'create_genome[4]': 
-             Finished task run for task with final state: 'Success'
-          ...
-        </pre></code>
-        <p>See <a href="example_files/output.log">output.log</a> for the complete running output.</p>
-            <li>Analyze results</li>
-        <pre class="mt-2 bg-light"><code>
-        <strong>~$ ls Results</code>
-        <code style="color:#1e69af">atts  atts_denovo  logs  pipolbs  pipolins  prokka  trnas     
-        </code></strong></pre>
-        <p>Again, see "Output files" section for more information.</p>
-          </ol>
-        </div>
-      </div>
-
-    </article>
   </section>
 
   <section id="Issues">
@@ -889,4 +786,5 @@
   
   </body>
 </html>
+
 
